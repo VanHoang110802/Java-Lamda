@@ -82,7 +82,7 @@
 - Có thể có default hoặc static method, vẫn hợp lệ
 
 ## 2. Một số functional interface chuẩn hay dùng ##
-- Runnable – không tham số, không trả về
+### Runnable – không tham số, không trả về ###
 - Ý nghĩa: Lambda sẽ làm một hành động, không nhận tham số, không trả về gì.
 ```
 public static void main(String[] args) {
@@ -90,3 +90,5 @@ public static void main(String[] args) {
         r.run(); // in ra: Hello Lambda!
 }
 ```
+
+### Callable<V> – không tham số, có trả về ###
