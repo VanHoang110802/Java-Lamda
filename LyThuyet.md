@@ -77,7 +77,7 @@
 
 # II. FUNCTIONAL INTERFACE #
 ## 1. Functional interface là gì? ##
-- Là interface chỉ có 1 phương thức trừu tượng (abstract method)
+- Là interface chỉ có 1 phương thức trừu tượng (abstract method), Lambda luôn gắn với functional interface
 - Lambda sẽ "thay thế" phương thức này
 - Có thể có default hoặc static method, vẫn hợp lệ
 
