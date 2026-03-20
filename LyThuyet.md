@@ -149,3 +149,18 @@ public class Test {
     }
 }
 ```
+
+### Comparator<T> – nhận 2 tham số, trả về int ###
+- Ý nghĩa: Lambda nhận 2 giá trị, trả về số âm/0/dương để so sánh thứ tự.
+```
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>(List.of("Alice", "Bob", "Charlie"));
+        names.sort((a, b) -> a.length() - b.length());
+        System.out.println(names); // in ra: [Bob, Alice, Charlie]
+    }
+}
+```
