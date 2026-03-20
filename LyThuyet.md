@@ -92,3 +92,60 @@ public static void main(String[] args) {
 ```
 
 ### Callable<V> – không tham số, có trả về ###
+- Ý nghĩa: Lambda không nhận tham số, nhưng trả về một giá trị.
+- Callable luôn phải dùng try/catch (hoặc throws) vì phương thức call() khai báo throws Exception, tức là nó có thể ném ngoại lệ.
+```
+import java.util.concurrent.Callable;
+
+public class TestCallable {
+    public static void main(String[] args) {
+        Callable<Integer> c = () -> 42;
+
+        try {
+            System.out.println(c.call()); // in ra 42
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Consumer<T> – nhận 1 tham số, không trả về ###
+- Ý nghĩa: Lambda nhận một giá trị, thực hiện hành động với nó, không trả về.
+```
+import java.util.function.Consumer;
+
+public class Test {
+    public static void main(String[] args) {
+        Consumer<String> con = x -> System.out.println("Bạn vừa nhập: " + x);
+        con.accept("Hoàng"); // in ra: Bạn vừa nhập: Hoàng
+    }
+}
+```
+
+### Function<T,R> – nhận 1 tham số, trả về giá trị ###
+- Ý nghĩa: Lambda nhận một giá trị, xử lý và trả về kết quả.
+```
+import java.util.function.Function;
+
+public class Test {
+    public static void main(String[] args) {
+        Function<Integer, Integer> f = x -> x * 2;
+        System.out.println(f.apply(5)); // in ra: 10
+    }
+}
+```
+
+### Predicate<T> – nhận 1 tham số, trả về boolean ###
+- Ý nghĩa: Lambda nhận một giá trị, kiểm tra điều kiện, trả về true/false.
+```
+import java.util.function.Predicate;
+
+public class Test {
+    public static void main(String[] args) {
+        Predicate<Integer> p = x -> x > 0;
+        System.out.println(p.test(-3)); // in ra: false
+        System.out.println(p.test(5));  // in ra: true
+    }
+}
+```
